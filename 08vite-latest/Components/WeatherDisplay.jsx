@@ -1,28 +1,36 @@
-// WeatherDisplay.js
-import React from 'react';
-import weatherFetch from '../Hooks/weatherFetch';
-import tempFetch from '../Hooks/tempFetch';
+import React, { useEffect } from 'react';
+import useWeatherAndTempFetch from '../Hooks/useWeatherAndTempFetch';
 
 const WeatherDisplay = ({ city }) => {
-  const { data, loading, error } = weatherFetch(city);
-  const latitude=data?.lat
-  const longitude=data?.lon
-  console.log(latitude);
-  const {temp,load,err}=tempFetch({latitude,longitude})
-  console.log(temp);
+  const {
+    weatherData,
+    weatherLoading,
+    weatherError,
+    tempData,
+    tempLoading,
+    tempError,
+  } = useWeatherAndTempFetch(city);
+
+  useEffect(() => {
+    // Additional logic you may want to perform when city changes
+  }, [city]);
+
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      {data && (
+      {weatherLoading && <p>Loading weather...</p>}
+      {weatherError && <p>Error fetching weather: {weatherError}</p>}
+      {weatherData && (
         <>
           <h2>Weather Information</h2>
-          <p>Name: {data.name}</p>
-          <p>Latitude: {data.lat}</p>
-          <p>Longitude: {data.lon}</p>
-          
+          <p>Name: {weatherData.name}</p>
+          <p>Latitude: {weatherData.lat}</p>
+          <p>Longitude: {weatherData.lon}</p>
         </>
       )}
+
+      {tempLoading && <p>Loading temperature...</p>}
+      {tempError && <p>Error fetching temperature: {tempError}</p>}
+      {tempData && <p>Temperature: {tempData}</p>}
     </div>
   );
 };

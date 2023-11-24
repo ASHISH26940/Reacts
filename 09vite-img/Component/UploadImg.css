@@ -1,0 +1,75 @@
+/* src/UploadImg.css */
+
+.UploadImg {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .custom-file-input {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .custom-file-input input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+  }
+  
+  .upload-button {
+   display: flex;
+   background: #8c8cea;
+   padding: 2vw 3vw;
+   margin:2vw 45%;
+   
+  }
+  
+  .download-button {
+    background: rgb(226, 122, 122);
+    padding: 2vw 2vw;
+    margin:2vw 45%;
+  }
+  
+  .uploaded-file {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .uploaded-file svg {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #3498db;
+  }
+  
+  .uploaded-file span {
+    font-size: 18px;
+    word-break: break-all;
+    color: #333;
+  }
+  

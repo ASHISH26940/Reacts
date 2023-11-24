@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 
 const WeatherInput = ({ onCityChange }) => {
-  const [city, setCity] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (event) => {
-    setCity(event.target.value);
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onCityChange(city);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onCityChange(inputValue);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Enter city:
-        <input type="text" value={city} onChange={handleChange} />
+        Enter City:
+        <input type="text" value={inputValue} onChange={handleChange} />
       </label>
-      <button type="submit">Get Weather</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
