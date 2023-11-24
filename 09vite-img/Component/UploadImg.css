@@ -14,7 +14,9 @@
   }
   
   .custom-file-input {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     background-color: #3498db;
@@ -24,7 +26,13 @@
     cursor: pointer;
     font-size: 16px;
     margin-right: 10px;
+    transition: background-color 0.3s ease;
   }
+
+  .custom-file-input:hover{
+    background-color: #2980b9;
+  }
+
   
   .custom-file-input input {
     position: absolute;
@@ -41,14 +49,20 @@
    display: flex;
    background: #8c8cea;
    padding: 2vw 3vw;
-   margin:2vw 45%;
+   margin:2vw 40%;
+   transition: background-color 0.3s ease;
    
+  }
+
+  .upload-button:hover{
+    background: #8787ea;
   }
   
   .download-button {
     background: rgb(226, 122, 122);
     padding: 2vw 2vw;
-    margin:2vw 45%;
+    margin:2vw 40%;
+    transition: background-color 0.3s ease;
   }
   
   .uploaded-file {
@@ -73,3 +87,27 @@
     color: #333;
   }
   
+  /* Add these styles to your existing CSS file or create a new one */
+
+.processing-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.processing-buttons button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.processing-buttons button:hover {
+  background-color: #2980b9;
+}
+
+/* You can customize the styles based on your design preferences */
